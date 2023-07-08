@@ -14,12 +14,25 @@ app.use(Bodyparser.text())
 app.use(express.json())
 app.use(Bodyparser.urlencoded({extended:true}))
 
-app.use("/api/abc",abc)
+app.use("/api/abc",abc) 
 
-mongoose.connect('mongodb://127.0.0.1:27017/loginForm')
-.then(() => console.log('Connected to MongoDB...'))
-.catch(err => console.error('Could not connect to MongoDB...'));
+const password = encodeURIComponent("#1Include");
+const dbUrl = `mongodb+srv://memmeringjoseph:${password}@cluster0.ev6af7k.mongodb.net/logoutForm?retryWrites=true&w=majority`;
 
+
+const connectionParams = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+};
+
+mongoose
+.connect(dbUrl, connectionParams)
+.then(() => {
+    console.info("connected to the DB");
+})
+.catch((e) => {
+    console.log("Error",e);
+});
 
 app.listen(4000,()=>{
     console.log("server is running on 4000");
