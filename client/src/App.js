@@ -17,9 +17,9 @@ export default function App() {
             value={{
               users: [
                 {
-                   name: "Anu",
-                   email: "anu@gmail.com",
-                   password: "anu@05"
+                   name: "Praveen",
+                   email: "praveen11156@gmail.com",
+                   password: "#1Include"
                   
                 }
               ]
