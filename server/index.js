@@ -16,8 +16,8 @@ app.use(Bodyparser.urlencoded({extended:true}))
 
 app.use("/api/abc",abc) 
 
-const password = encodeURIComponent("#1Include");
-const dbUrl = `mongodb+srv://memmeringjoseph:${password}@cluster0.ev6af7k.mongodb.net/logoutForm?retryWrites=true&w=majority`;
+const password = encodeURIComponent("1p21CS016");
+const dbUrl = `mongodb+srv://${process.env.MONGO_USER_NAME}:${process.env.MONGO_PASSWORD}@cluster0.ev6af7k.mongodb.net/logoutForm?retryWrites=true&w=majority`;
 
 
 const connectionParams = {
